@@ -1,0 +1,209 @@
+﻿<!DOCTYPE HTML>
+<html lang="en-US">
+
+<head>
+<title>Queenstown - Subscription submitted</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+
+<link href="css/queenstown.css" rel="stylesheet" type="text/css" />
+
+<!--Code here from lecture form validation example - MoreUserfriendlyform.html-->
+
+<script type = "text/javascript">
+
+function validateForm() {
+
+	var validation_result = true;
+	var error_messages = document.createElement("ul");
+    var name = document.forms["myForm"]["fname"].value;
+    var surname = document.forms["myForm"]["lname"].value;
+    var email = document.forms["myForm"]["email"].value;
+    var terms = document.forms["myForm"]["terms"].value;
+    var patt = new RegExp("^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$");
+ 
+ 	if(name == null || name == "")
+ 	{
+ 		var message = "Invalid First Name."
+ 		var text_node = document.createTextNode(message);
+ 		var list_item = document.createElement("li");
+ 		list_item.appendChild(text_node);
+ 		error_messages.appendChild(list_item); 
+
+ 		validation_result = false;
+
+ 	}
+ 	
+ 	if(surname == null || surname == "")
+ 	{
+ 		var message = "Invalid Surname."
+ 		var text_node = document.createTextNode(message);
+ 		var list_item = document.createElement("li");
+ 		list_item.appendChild(text_node);
+ 		error_messages.appendChild(list_item); 
+
+ 		validation_result = false;
+
+ 	} 	
+    
+    if (patt.test(email) != true ) 
+    {
+       
+       var message = "Invalid Email Address."
+ 		var text_node = document.createTextNode(message);
+ 		var list_item = document.createElement("li");
+ 		list_item.appendChild(text_node);
+ 		error_messages.appendChild(list_item); 
+
+ 		validation_result = false;
+
+    }
+    
+    if (document.getElementById("terms").checked != true) 
+    {
+       
+       var message = "Please ensure you have read and agree to the terms and conditions."
+ 		var text_node = document.createTextNode(message);
+ 		var list_item = document.createElement("li");
+ 		list_item.appendChild(text_node);
+ 		error_messages.appendChild(list_item); 
+
+ 		validation_result = false;
+
+    }
+
+
+    if(validation_result == false)
+    {
+    	var divElement = document.getElementById("error");
+
+    		divElement.innerHTML = "";
+
+    	divElement.appendChild(error_messages);
+
+    	divElement.style.display = "block";
+
+    }	
+
+    
+    	return validation_result;
+
+    
+}
+
+function validateName()
+{
+	var name_span = document.getElementsByClassName("fname")[0];
+	var name = document.forms["myForm"]["fname"].value;
+	if(name == null || name == "" || name.length < 4)
+ 	{
+ 		var message = "*Please enter a valid name."
+ 		name_span.innerHTML = message;
+
+ 	}
+
+
+
+}
+
+function validateSurname()
+{
+	var surname_span = document.getElementsByClassName("surname")[0];
+	var surname = document.forms["myForm"]["lname"].value;
+	if(surname == null || surname == "" || surname.length < 6)
+ 	{
+ 		var message = "*Please enter a valid surname."
+ 		surname_span.innerHTML = message;
+
+ 	}
+
+
+}
+
+function validateEmail()
+{
+  var surname_span = document.getElementsByClassName("email")[0];
+  var email = document.forms["myForm"]["email"].value;
+  var patt = new RegExp("^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$");
+ 
+ if (patt.test(email) != true ) 
+    {
+ 		var message = "*Invalid email address."
+ 		surname_span.innerHTML = message;
+ 	
+ 	}	
+
+
+}
+</script>
+
+</head>
+
+<body>
+<div class="centered">
+
+<div class="background_centered" id="headerlogo">
+	<a href="index.html" style="display:block">
+	<img alt="Header logo" height="140" src="images/logo.png" width="683" id="headerimg"></a></div>
+	
+<div class="nav">
+  <div class="wrap">
+<div class="sprite sprite-gallery"><a href="gallery.html" style="display:block"> <br><br><br> </a></div>
+<div class="sprite sprite-accommodation">
+	<a href="accommodation.html" style="display:block"> <br><br><br>  </a></div>
+<div class="sprite sprite-home"><a href="index.html" style="display:block"> <br><br><br> </a></div>
+<div class="sprite sprite-places"><a href="places.html" style="display:block"> <br><br><br> </a></div>
+<div class="sprite sprite-newsletter"><a href="newsletter.html" style="display:block"> <br><br><br> </a></div>
+  </div>
+</div>
+	
+<div class="para_style">
+	
+<p class="bigtext">
+Subscription Added!</p>
+
+<p > Please enter your email address here and hit the subscribe button 
+if you'd like to keep up to date with the latest news and events in Queenstown.
+We'll keep you posted when there's anything spectacular to be enjoyed in 
+our iconic city. </p>
+
+<!--Code here from w3schools : http://www.w3schools.com/css/tryit.asp?filename=trycss_forms-->
+<!--Code here from lecture form validation example - MoreUserfriendlyform.html-->
+
+<div id = "error" class="para_style"></div>	
+
+ <form name="myForm" action="submitted.asp"
+ onsubmit="return validateForm() " method="post">
+    <label for="fname">First Name:</label>
+    <span lang="en-nz">&nbsp;&nbsp;&nbsp; </span>
+<input type="text" id="fname" onblur = "validateName()"><span class = "inline error fname"></span><br><br>
+
+
+    <label for="lname">Surname:  <span lang="en-nz">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 </span>  </label>
+<input type="text" id="lname" onblur = "validateSurname()"><span class = "inline error surname"></span><br><br>
+
+
+    <label for="email">Email Address<span lang="en-nz">:</span></label>
+<input type="text" id="email" onblur = "validateEmail();"><span class = "inline error email"></span><br><br>
+
+  <input type="checkbox" id="terms"><span class = "inline error terms"></span>
+   I agree to the subscription 
+  <a href="terms_privacy.html" style="color:cyan">
+  Terms and Conditions<br></a><br>
+
+    <input type="submit" id="submit" value="Submit">
+  </form>
+
+
+</div>
+
+<p class="para_style">Website Design © Copyright 2016 Aquila Halpé. <a href=
+"mailto:apocalaeon@hotmail.com?Subject=Queenstown%20website%20query" style="color:aqua">
+Click here to contact the administrator.</a>
+</p>
+</div>
+
+</body>
+
+</html>

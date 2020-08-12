@@ -1,0 +1,436 @@
+﻿@charset "UTF-8";
+
+/*mixitup css*/
+
+*{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body, button{
+  font-family: 'Helvetica Neue', arial, sans-serif;
+}
+
+.controls{
+	padding: 2%;
+	background-image: url('../images/vintage_gold_wallpaper-wallpaper-1920x1080.jpg');
+	background-position: top;
+	color:cyan;
+	font-size:large;
+    font-weight: 300;
+	border: 2px solid #663300;
+}
+
+.places_restbar{
+
+	width:25%;
+}
+
+.places_attrac{
+}
+
+label{
+  font-weight: 300;
+  margin: 0 .4em 0 0;
+  border: 2px solid #663300;
+  padding:10px;
+  border-radius: 1em;
+  background-image:url('../images/goldstrip2.jpg');
+}
+
+button{
+  display: inline-block;
+  padding: .4em .8em;
+  background-color:#663300;
+  border: 0;
+  color:aqua;
+  font-size: 16px;
+  font-weight: 300;
+  border-radius: 1em;
+  cursor: pointer;
+}
+
+button.active{
+  background-color:#996600;
+  border:1px solid #663300;
+}
+
+button:focus{
+  outline: 0 none;
+}
+
+button + label{
+  margin-left: 1em;
+}
+
+.container{
+	background-position: center;
+	padding: 2% 2% 0;
+	text-align: justify;
+	font-size: 0.1px;
+	background-image: url('../images/goldstrip3.png');
+	-webkit-backface-visibility: hidden;
+}
+
+.container:after{
+  content: '';
+  display: inline-block;
+  width: 100%;
+}
+
+.container .mix,
+.container .gap{
+  display: inline-block;
+  width: 49%;
+}
+
+.container .mix{
+  text-align: left;
+  background-image:url('../images/bg_tile.png');
+  background-position:center;
+  margin-bottom: 2%;
+  display: none;
+}
+
+.container .mix.category-1{
+  border-top: 2px solid cyan;
+}
+
+.container .mix.category-2{
+  border-top: 2px solid yellow;
+}
+
+.container .mix.category-3{
+  border-top: 2px solid #00FF00;
+}
+
+
+.container .mix:after{
+  content: attr(data-myorder);
+  color: white;
+  font-size: 16px;
+  display: inline-block;
+  vertical-align: top;
+  padding: 4% 6%;
+  font-weight: 700;
+}
+
+.container .mix:before{
+  content: '';
+  display: inline-block;
+  padding-top: 60%;
+}
+
+@media all and (min-width: 420px){
+  .container .mix,
+  .container .gap{
+    width: 64%;
+  }
+}
+
+@media all and (min-width: 640px){
+  .container .mix,
+  .container .gap{
+    width: 47%;
+  }
+}
+
+/*/mixitup css*/
+
+.listing
+{
+	border: 10px solid #663300;
+	border-radius: 1.5em;
+	margin: 15px;
+	background-image:url('../images/goldstrip2.jpg');
+	background-position: right;
+}
+
+.listing_img
+{
+	padding: 7px;
+}
+
+.listing_text
+{
+	padding: 7px;
+	margin: 15px;
+	display:block;
+}
+
+.listing_href
+{
+	padding: 7px;
+	margin:15px;
+	color:aqua;
+	display:block;
+	font-size:large;
+
+}
+
+
+#error
+{
+	border: 2px solid red;
+	border-radius: 1.5em;
+    background-image:url('../images/vintage_gold_wallpaper-wallpaper-1920x1080.jpg');
+    background-position:right;
+	width: 210px;
+	display: none;
+	left: 50%;
+	-webkit-transform: translate(-50%, 0);
+	position: relative;
+	text-align: left;
+}
+
+#error ul{ 
+	list-style-type: none; 
+    
+}
+
+.inline.error{
+	color: red;
+}
+
+input[type=text], select {
+	width:500px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border:1px #FFFF00 solid;
+	border-radius: 1.5em;
+    box-sizing: border-box;
+    background-image:url('../images/vintage_gold_wallpaper-wallpaper-1920x1080.jpg');
+   	background-position:right;
+   	color:#FFFF00;
+
+}
+
+input[type=submit] {
+    width: 150px;
+    height: 50px;
+    background-color:#FF9900;
+    color: brown;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+	border-radius: 1.5em;
+    cursor: pointer;
+   	font-family: "Trajan Pro 3";
+	font-size:large;
+
+}
+
+.bigtext {
+	border-radius: 1.5em;
+	background-position: center;
+	text-align: center;
+	font-family: "Trajan Pro 3";
+	max-width: 996px;
+	margin: 15px;
+	padding: 1em 1em;
+	clear: left;
+	font-size: xx-large;
+}
+
+
+.thumbnails img {
+	max-width: 159px;
+	border: 4px #22170D solid;
+	padding: 1px;
+	margin: 10px 10px 10px 0;
+}
+
+.thumbnails img:hover {
+	border: 4px #00FFCC solid;
+	cursor: pointer;
+}
+
+#lightbox img {
+	border: 4px solid #444;
+	padding: 1px;
+	position: fixed;
+	left: 25%;
+}
+
+#lightbox
+{
+	 background-color: rgba(8,8,8,0.75) ; 
+	 padding: 200px 0;
+	 width: 100%;
+	 height: 100%;
+	 display: none;
+	 position: fixed;
+	 top: 0px;
+	 left: 0px;
+	 
+	 
+}
+
+img#fullImage
+{
+	margin: 0 auto;
+	display:none;
+	opacity: 0.1;
+	
+ 
+}
+
+.nav {
+	
+/*	float:left; text-align:left;
+*/	
+}
+
+.wrap {
+	
+	width:960px;margin:0 auto;text-align:center;
+
+}
+
+.sprite {
+    background-image: url('../images/nav_sprite.jpg');
+    background-repeat: no-repeat;
+    border-radius: 1.5em;
+    display:inline-block;
+    float:left;
+    margin:2px;
+    margin-bottom:21px;
+
+}
+
+.sprite-gallery {
+    width: 182px;
+    height: 55px;
+    background-position: -8px -8px;
+    margin-left:15px;
+}
+
+.sprite-accommodation {
+	width: 182px;
+	height: 55px;
+	background-position: -207px -8px;
+}
+
+.sprite-home {
+	width: 182px;
+	height: 55px;
+	background-position: -406px -8px;
+}
+
+.sprite-places {
+    width: 182px;
+    height: 55px;
+    background-position: -605px -8px;
+}
+
+.sprite-newsletter {
+    width: 182px;
+    height: 55px;
+    background-position: -804px -8px;
+    }
+
+a.smooth {
+	
+	display: block;
+	margin-top: 15px;
+	margin-left: 15px;
+	text-decoration: none;
+	text-align: center;
+	padding: 0.75em 2em;
+	width: 966px;
+	height: 3em;
+	border-radius: 1.5em;
+	color: #FFCC00;
+	background-image:url('../images/bg_tile.png');
+	-ms-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	transition-property: all;
+	transition-duration: 2s;
+	transition-timing-function: ease-in-out;
+	transition-delay: 0.2s;
+	-ms-transition-property: all;
+	-ms-transition-duration: 2s;
+	-ms-transition-timing-function: ease-in-out;
+	-ms-transition-delay: 0.2s; 
+	-moz-transition-property: all;
+	-moz-transition-duration: 2s;
+	-moz-transition-timing-function: ease-in-out;
+	-moz-transition-delay: 0.2s; 
+	-webkit-transition-property: all;
+	-webkit-transition-duration: 2s;
+	-webkit-transition-timing-function: ease-in-out;
+	-webkit-transition-delay: 0.2s;
+	position: relative;
+}
+
+	a.smooth:hover, a.smooth:focus {
+		background-color: red; 
+		height: 25em;
+		width: 966px;
+		padding-top: 7em;
+
+}	
+
+.vid{
+	
+	position:absolute;
+	left:50%;
+    -webkit-transform: translate(-50%, 0); 
+
+}
+
+.para_style {
+	border-radius: 1.5em;
+	background-image:url('../images/bg_tile.png');
+	background-position: center;
+	text-align: center;
+	font-family: "Adobe Garamond Pro" , Geneva, sans-serif;
+	width: 996px;
+	margin: 15px;
+	padding: 1em 1em ;
+	clear:left;
+
+}
+
+.background_centered{
+	border-radius: 1.5em;
+	margin: 15px;
+	background-position: center;
+	background-image: url('../images/vintage_gold_wallpaper-wallpaper-1920x1080.jpg');
+	text-align: center;
+	font-family: "Adobe Garamond Pro" , Geneva, sans-serif;
+	max-width: 996px;
+	padding: 1em 1em ;
+
+	
+}
+
+.centered{
+	
+    left: 50%; 
+    -webkit-transform: translate(-50%, 0); 
+    position: absolute;
+
+	
+}
+
+body {
+	color: #FFCC00;
+	font-family: "Adobe Garamond Pro" , Geneva, sans-serif;
+	font-size: 100%; 
+	background-repeat: repeat-x;
+	background-image: url('../images/stripes.jpg');
+	background-attachment: fixed;
+	background-color: #150B00;
+	vertical-align: middle;
+	display: block;
+	z-index: 13;
+	margin: 1em;
+	float: left;
+	max-width: 996px;
+	height: auto;
+}

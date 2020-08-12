@@ -1,0 +1,150 @@
+﻿<!DOCTYPE HTML>
+
+<!--Gallery logic references lecture slides on jQuery.-->
+
+<html lang="en-US">
+
+<head>
+<title>Queenstown - Gallery</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+
+<link href="css/queenstown.css" rel="stylesheet" type="text/css" />
+
+<script src="jquery-3.1.0.js"></script>
+<script type = "text/javascript">
+
+		
+
+		function displayFullImage(ImageElement)
+		{
+		
+			//fade in the lignt box
+		   $("#lightbox").fadeIn(1000);
+		   //fade in the image and set new image size
+		   $("#fullImage").attr("src", ImageElement.src)
+		   .css({"opacity":"1", "transition": "transform 3s"})
+		   .fadeIn(1200)
+		   .animate({width: '50%',
+        			height: '50%'},1200)
+		   .dequeue(); //call dequeue to execute all effects at the same time
+
+		   $("#fullImage").css("transform","rotate(-365deg)")
+		   
+		
+		}
+		
+		
+		
+		function removeFullImage()
+		{
+			//rotate back
+			 $("#fullImage").css("transform","rotate(365deg)")
+			//fade out the lignt box
+			$("#lightbox").fadeOut(1200);
+			//fade out the image and set to original size
+		   $("#fullImage").animate({width: '200px',
+        			height: '112px'},1000)
+		   .fadeOut(1000).dequeue(); //call dequeue to execute all effects at the same time
+
+			
+		}
+
+//when document is ready, we begin to add event listener
+$(document).ready(function(){
+
+   // jQuery methods go here...
+   //add event listener in jQuery
+   	$("#img1").click(function(){displayFullImage(this)});
+	$("#img2").click(function(){displayFullImage(this)});
+	$("#img3").click(function(){displayFullImage(this)});	
+	$("#img4").click(function(){displayFullImage(this)});
+	$("#img5").click(function(){displayFullImage(this)});
+   	$("#img6").click(function(){displayFullImage(this)});
+	$("#img7").click(function(){displayFullImage(this)});
+	$("#img8").click(function(){displayFullImage(this)});	
+	$("#img9").click(function(){displayFullImage(this)});
+	$("#img10").click(function(){displayFullImage(this)});
+
+	$("#lightbox").click(function(){removeFullImage()});
+	$("#fullImage").click(function() {event.stopPropagation();
+  
+});
+
+
+
+});
+
+
+
+
+</script>
+
+
+</head>
+
+<body>
+
+
+
+<div class="centered">
+<div class="background_centered" id="headerlogo">
+	<a href="index.html" style="display:block">
+	<img alt="Header logo" height="140" src="images/logo.png" width="683" id="headerimg"></a></div>
+		
+<div class="nav">
+  <div class="wrap">
+<div class="sprite sprite-gallery"><a href="gallery.html" style="display:block"> <br><br><br> </a></div>
+<div class="sprite sprite-accommodation">
+	<a href="accommodation.html" style="display:block"> <br><br><br>  </a></div>
+<div class="sprite sprite-home"><a href="index.html" style="display:block"> <br><br><br> </a></div>
+<div class="sprite sprite-places"><a href="places.html" style="display:block"> <br><br><br> </a></div>
+<div class="sprite sprite-newsletter"><a href="newsletter.html" style="display:block"> <br><br><br> </a></div>
+  </div>
+</div>
+
+<div class="para_style">
+
+<p class="bigtext"> Have a look at some beautiful images of Queenstown!</p>
+
+</div>
+
+<div class="para_style">
+
+	<div class="thumbnails">
+		<img id = "img1"  src="images/gallery/DQ19241-header-image-internal.jpg" 
+		style ="margin-left:15px" alt=""/>
+		<img id = "img2"  src="images/gallery/earnslawlodge.co.nz-homepage-qtviews-slider4.jpg" alt=""/>
+		<img id = "img3"  src="images/gallery/Lake_Wakatipu_from_Queenstown_gondola.jpg" alt=""/>
+		<img id = "img4"  src="images/gallery/queenstown_night_time.jpg" alt=""/>
+		<img id = "img5"  src="images/gallery/Queenstown_from_Bob's_Peak.jpg" alt=""/>
+		<img id = "img6"  src="images/gallery/stripes.jpg" 
+		style ="margin-left:15px" alt=""/>
+		<img id = "img7"  src="images/gallery/queenstown-001.jpg" alt=""/>
+		<img id = "img8"  src="images/gallery/queenstown-2.jpg" alt=""/>
+		<img id = "img9"  src="images/gallery/queenstown-hotel-lake.jpg" alt=""/>
+		<img id = "img10" src="images/gallery/skyview-queenstown.jpg" alt=""/>
+
+	</div>
+	
+</div>
+
+<p class="para_style">Website Design © Copyright 2016 Aquila Halpé. <a href=
+"mailto:apocalaeon@hotmail.com?Subject=Queenstown%20website%20query" style="color:aqua">
+Click here to contact the administrator.</a>
+</p>
+
+
+
+</div>
+
+<div id = "lightbox">
+				
+				<img  src="null" alt="full image" id = "fullImage" width = "200" height = "112"  />
+			
+</div>
+	
+
+</body>
+
+</html>
